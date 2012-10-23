@@ -2,6 +2,12 @@
 
 /**
  * Converts FTP file list results to GFile.
+ * 
+ * @author Hervé Guenot
+ * @link http://www.guenot.info
+ * @copyright Copyright &copy; 2012 Hervé Guenot
+ * @license GNU LESSER GPL 3
+ * @version 1.0
  */
 class GFtpUnixFileListConverter extends GFtpFileListConverter {
 	

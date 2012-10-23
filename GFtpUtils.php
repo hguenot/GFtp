@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Utility class for FTP component.
+ * 
+ * @author Hervé Guenot
+ * @link http://www.guenot.info
+ * @copyright Copyright &copy; 2012 Hervé Guenot
+ * @license GNU LESSER GPL 3
+ * @version 1.0
+ */
 class GFtpUtils {
 
 	/** @var GFtpUtils Global instance of GFtpUtils. */

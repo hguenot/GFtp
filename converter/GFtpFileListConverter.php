@@ -2,6 +2,12 @@
 
 /**
  * Generic class used to parse file listing result.
+ * 
+ * @author Hervé Guenot
+ * @link http://www.guenot.info
+ * @copyright Copyright &copy; 2012 Hervé Guenot
+ * @license GNU LESSER GPL 3
+ * @version 1.0
  */
 abstract class GFtpFileListConverter extends CComponent {
 

@@ -4,6 +4,12 @@ Yii::import('ext.GFtp.*');
 
 /**
  * FTP connection to use as an Application Component.
+ * 
+ * @author Hervé Guenot
+ * @link http://www.guenot.info
+ * @copyright Copyright &copy; 2012 Hervé Guenot
+ * @license GNU LESSER GPL 3
+ * @version 1.0
  */
 class GFtpApplicationComponent extends CApplicationComponent {
 	
