@@ -113,7 +113,7 @@ class GFtpComponent extends CComponent {
 			Yii::trace(CVarDumper::dumpAsString($parts), 'gftp');
 		} catch (Exception $e) {
 			throw new GFtpException(
-					Yii::t('gftp', "{connectString} is not a valid connection string: {message}", array('{connectString}' => $connectionString, $e->getMessage()))
+					Yii::t('gftp', "{connectString} is not a valid connection string: {message}", array('{connectString}' => $connectionString, '{message}' => $e->getMessage()))
 			);
 		}
 

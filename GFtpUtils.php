@@ -99,7 +99,8 @@ class GFtpUtils {
 			if (isset($message)) {
 				// FTP error message are formed : ftp_***(): <message>
 				$messages = explode(':', $message, 2);
-				throw $context['this']->createException($messages[0], $messages[1]);
+				$ex = $context['this']->createException($messages[0], $messages[1]);
+				if ($ex != null) throw $ex;
 			}
 		}
 
