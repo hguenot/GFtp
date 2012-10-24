@@ -1,6 +1,6 @@
 # GFtp
 
-GFtp is a FTP extension for [YII Framework](http://http://www.yiiframework.com).
+GFtp is a FTP extension for [YII Framework](http://www.yiiframework.com).
 
 It contains :
 
@@ -16,7 +16,7 @@ __**Subfolder must be named GFtp.**__
 
 ## Usage
 
-Here is a basic usage of GFtp extension. More samples could be found on [GFtp extension website](http://www.guenot.info/index.php?r=site/ftp). 
+Here is a basic usage of GFtp extension. More samples could be found on [GFtp extension website](http://yii.guenot.info/index.php?r=site/ftp). 
 
 * Create an FTP application component
 
