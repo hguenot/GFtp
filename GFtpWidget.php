@@ -30,19 +30,29 @@ function gftpfilesort($f1, $f2){
  */
 class GFtpWidget extends CWidget {
 	
-	/** @var GFtpComponent|GFtpApplicationComponent FTP connection */	
+	/** 
+	 * @var GFtpComponent|GFtpApplicationComponent FTP connection. 
+	 */	
 	public $ftp = null;
 	
-	/** @var string Folder content. */
+	/** 
+	 * @var string Folder content. 
+	 */
 	public $baseFolder = null;
 	
-	/** @var bool Flag indicating if link will be displayed on folder to allow navigation. */
+	/** 
+	 * @var bool Flag indicating if link will be displayed on folder to allow navigation. 
+	 */
 	public $allowNavigation = true;
 	
-	/** @var string Navigation parameter name (passed à GET variable). */
+	/** 
+	 * @var string Navigation parameter name (passed as GET variable). 
+	 */
 	public $navKey = null;
 	
-	/** @var array Columns to display. */
+	/** 
+	 * @var array Columns to display. 
+	 */
 	public $columns = null;
 	
 	public function init() {
