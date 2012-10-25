@@ -95,11 +95,11 @@ class GFtpUtils {
 			// disable error capturing to avoid recursive errors
 			restore_error_handler();
 			restore_exception_handler();
-			$this->exception = null;
 			if (isset($message)) {
 				// FTP error message are formed : ftp_***(): <message>
 				$messages = explode(':', $message, 2);
-				$ex = $context['this']->createException($messages[0], $messages[1]);
+				$func = explode(' ', $messages[0], 2);
+				$ex = $context['this']->createException($func[0], $messages[1]);
 				if ($ex != null) throw $ex;
 			}
 		}

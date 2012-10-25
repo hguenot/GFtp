@@ -1,5 +1,24 @@
 <?php
 
+
+function gftpfilesort($f1, $f2){
+	$fn1 = strtolower($f1->filename);
+	$fn2 = strtolower($f2->filename);
+		
+	$t1 = substr($f1->rights, 0, 1) == "d" ? 0 : 1;
+	$t2 = substr($f2->rights, 0, 1) == "d" ? 0 : 1;
+		
+	if ($t1 == $t2) {
+		if ($fn1 < $fn2) return -1;
+		else if ($fn1 > $fn2) return 1;
+		else return 0;
+	} else if ($t1 < $t2) {
+		return -1;
+	} else {
+		return 1;
+	}
+}
+
 /**
  * Widget used to display FTP folder content under a Yii grid.
  * 
@@ -73,25 +92,23 @@ class GFtpWidget extends CWidget {
 		if ($error == null) {
 			try {
 				$files = $this->ftp->ls('.', true, false);
-				usort ($files, function ($f1, $f2){
-					$fn1 = strtolower($f1->filename);
-					$fn2 = strtolower($f2->filename);
-					
-					$t1 = substr($f1->rights, 0, 1) == "d" ? 0 : 1;
-					$t2 = substr($f2->rights, 0, 1) == "d" ? 0 : 1;
-					
-					if ($t1 == $t2) {
-						if ($fn1 < $fn2) return -1;
-						else if ($fn1 > $fn2) return 1;
-						else return 0;
-					} else if ($t1 < $t2) {
-						return -1;
-					} else {
-						return 1;
+				$current = null;
+				$parent = false;
+				foreach ($files as $idx=>$file) {
+					if ($file->filename == '.') {
+						$current = $idx;
+					} else if ($file->filename == '..') {
+						$parent = true;
 					}
-				});
+				}
+
+				if ($current !== null){
+					unset($files[$current]);
+				}
 				
-				if (trim($this->baseFolder) != "/") {
+				usort ($files, 'gftpfilesort');
+				
+				if (!$parent && trim($this->baseFolder) != "/") {
 					array_unshift($files, Yii::createComponent(array('class' => 'ext.GFtp.GFtpFile', 'filename' => '..', 'rights' => 'drwxr-xr-x')));
 				}
 			} catch (GFtpException $e) {
