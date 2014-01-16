@@ -257,7 +257,7 @@ class GFtpApplicationComponent extends CApplicationComponent {
 	 * 
 	 * @throws GFtpException If an error occcured during file transfert.
 	 */
-	public function get($mode, $remote_file, $local_file = null, $asynchronous = false) {
+	public function get($remote_file, $local_file = null, $asynchronous = false, $mode = FTP_BINARY) {
 		return $this->gftp->get($mode, $remote_file, $local_file, $asynchronous);
 	}
 	
@@ -273,7 +273,7 @@ class GFtpApplicationComponent extends CApplicationComponent {
 	 * 
 	 * @throws GFtpException If an error occcured during file transfert.
 	 */
-	public function put($mode, $local_file, $remote_file = null, $asynchronous = false) {
+	public function put($local_file, $remote_file = null, $asynchronous = false, $mode = FTP_BINARY) {
 		return $this->gftp->put($mode, $local_file, $remote_file, $asynchronous);
 	}
 	
