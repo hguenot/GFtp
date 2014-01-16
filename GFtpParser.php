@@ -20,7 +20,7 @@ class GFtpParser
 			$hosts = explode(":", $parts[0], 2);
 			// array("<port>", "<url>") or array("<url>") 
 			if (count($hosts) == 1) {
-				$res['host'] = $hosts[0];
+				$res['host'] = strrev($hosts[0]);
 			} else if(count($hosts) == 2) {
 				$res['port'] = strrev($hosts[0]);
 				$res['host'] = strrev($hosts[1]);
