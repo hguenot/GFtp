@@ -6,9 +6,9 @@ Yii::import('ext.GFtp.converter.*');
 /**
  * FTP connection.
  * 
- * @author Hervé Guenot
+ * @author Hervï¿½ Guenot
  * @link http://www.guenot.info
- * @copyright Copyright &copy; 2012 Hervé Guenot
+ * @copyright Copyright &copy; 2012 Hervï¿½ Guenot
  * @license GNU LESSER GPL 3
  * @version 1.0
  */
@@ -475,7 +475,7 @@ class GFtpComponent extends CComponent {
 	 * @throws GFtpException Raised when error occured when closing FTP connection.
 	 */
 	public function close() {
-		if (isset($this->handle) && $this->handle == null) {
+		if (isset($this->handle) && $this->handle != null) {
 			if (!ftp_close($this->handle)) {
 				throw new GFtpException(
 						Yii::t('gftp', 'Could not close connection to FTP server "{host}" on port "{port}"',
