@@ -631,7 +631,7 @@ class GFtpComponent extends CComponent {
 		$this->connectIfNeeded();
 		$full_remote_file = $remote_file;
 		if (!isset($remote_file) || $remote_file == null || !is_string($remote_file) || trim($remote_file) == "") {
-			$remote_file = basename($remote_file);
+			$remote_file = basename($local_file);
 				
 			try {
 				$full_remote_file = $this->pwd() . "/" . $remote_file;
