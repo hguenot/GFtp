@@ -1,3 +1,5 @@
+**This extension is not maintained anymore**
+
 # GFtp
 
 GFtp is a FTP extension for [YII Framework](http://www.yiiframework.com).
